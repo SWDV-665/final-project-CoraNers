@@ -8,6 +8,8 @@ import { OnTheMenuPage } from '../pages/onTheMenu/onTheMenu';
 import { ShoppingListPage } from '../pages/shoppingList/shoppingList';
 import { TabsPage } from '../pages/tabs/tabs';
 import { MyApp } from './app.component';
+import { FavoritesServiceProvider } from '../providers/favorites-service/favorites-service';
+import { DataServiceProvider } from '../providers/data-service/data-service';
 
 
 
@@ -34,7 +36,9 @@ import { MyApp } from './app.component';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    FavoritesServiceProvider,
+    DataServiceProvider
   ]
 })
 export class AppModule {}
