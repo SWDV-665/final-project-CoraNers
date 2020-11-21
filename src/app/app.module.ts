@@ -10,6 +10,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { MyApp } from './app.component';
 import { FavoritesServiceProvider } from '../providers/favorites-service/favorites-service';
 import { DataServiceProvider } from '../providers/data-service/data-service';
+import { GetRecipesPage } from '../pages/getRecipes/getRecipes';
 
 
 
@@ -17,6 +18,7 @@ import { DataServiceProvider } from '../providers/data-service/data-service';
   declarations: [
     MyApp,
     FavoritesPage,
+    GetRecipesPage,
     ShoppingListPage,
     OnTheMenuPage,
     TabsPage
@@ -29,6 +31,7 @@ import { DataServiceProvider } from '../providers/data-service/data-service';
   entryComponents: [
     MyApp,
     FavoritesPage,
+    GetRecipesPage,
     ShoppingListPage,
     OnTheMenuPage,
     TabsPage
