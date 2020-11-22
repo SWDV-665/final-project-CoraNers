@@ -11,7 +11,7 @@ import { MyApp } from './app.component';
 import { FavoritesServiceProvider } from '../providers/favorites-service/favorites-service';
 import { DataServiceProvider } from '../providers/data-service/data-service';
 import { GetRecipesPage } from '../pages/getRecipes/getRecipes';
-import { Camera } from '@ionic-native/camera/ngx';
+import { Camera } from '@ionic-native/camera';
 
 @NgModule({
   declarations: [
