@@ -11,8 +11,7 @@ import { MyApp } from './app.component';
 import { FavoritesServiceProvider } from '../providers/favorites-service/favorites-service';
 import { DataServiceProvider } from '../providers/data-service/data-service';
 import { GetRecipesPage } from '../pages/getRecipes/getRecipes';
-
-
+import { Camera } from '@ionic-native/camera/ngx';
 
 @NgModule({
   declarations: [
@@ -41,7 +40,8 @@ import { GetRecipesPage } from '../pages/getRecipes/getRecipes';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     FavoritesServiceProvider,
-    DataServiceProvider
+    DataServiceProvider,
+    Camera
   ]
 })
 export class AppModule {}
