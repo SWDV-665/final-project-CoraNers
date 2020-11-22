@@ -5,3 +5,14 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
+
+<ion-content>
+  <button (click)="loadPhoto()">Load Photo</button>
+  <button (click)="recognizeImage()" [disabled]="!selectedImage">Recognize Image</button>
+
+  <img [src]="selectedImage" *ngIf="selectedImage">
+
+  <ion-cardn *ngIf="imageText">
+    <ion-card-header>Image Text</ion-card-header>
+  </ion-card>
+</ion-content>
