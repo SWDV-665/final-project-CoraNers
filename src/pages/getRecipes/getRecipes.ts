@@ -9,7 +9,8 @@ import { FavoritesServiceProvider } from '../../providers/favorites-service/favo
 })
 export class GetRecipesPage {
 
-  constructor(public navCtrl: NavController, public toastCtrl: ToastController, public dataService: DataServiceProvider) {
+  constructor(public navCtrl: NavController, public toastCtrl: ToastController, public dataService: DataServiceProvider,
+    public favoritesServiceProvider: FavoritesServiceProvider) {
 
   }
 
