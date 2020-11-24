@@ -12,6 +12,7 @@ import * as Tesseract from 'tesseract.js'
 export class GetRecipesPage {
 
   selectedImage: string;
+  detectedText: string;
   imageText: string;
 
   constructor(public navCtrl: NavController, public toastCtrl: ToastController, public dataService: DataServiceProvider,
@@ -56,11 +57,35 @@ export class GetRecipesPage {
   }
 
   recognizeImage() {
-    console.log("in recognizeImage");
-    // Tesseract.recognize(this.selectedImage)
+    const worker = Tesseract.createWorker({
+      logger: m => console.log(m)
+    });
+    Tesseract.setLogging(true);
+    work();
+  
+    async function work() {
+      await worker.load();
+      await worker.loadLanguage('eng');
+      await worker.initialize('eng');
+  
+      let result = await worker.detect(this.selectedImage);
+      this.detectedText = result.data;
+  
+      let newResult = await worker.recognize(this.selectedImage);
+      this.imageText = newResult.data;
+      console.log(newResult.data);
+  
+      await worker.terminate();
+    }
+  }
+
+  // recognizeImage() {
+  //   console.log("in recognizeImage");
     // .then(result => {
     //   console.log("In recognizeImage callback");
+    //   this.imageText = result.data;
     // });
+    // Tesseract.recognize(this.selectedImage)
     // .progress(message => {
     //   if (message.status === 'recognizing text')
     //   this.progress.set(message.progress);
@@ -72,6 +97,6 @@ export class GetRecipesPage {
     // .finally(resultOrError => {
     //   this.progress.complete();
     // });
-  }
+  // }
 
 }
